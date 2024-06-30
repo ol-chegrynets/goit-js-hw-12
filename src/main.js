@@ -33,7 +33,7 @@ async function onSearchBtnSubmit(event) {
     return;
   }
   showElement(refs.loader);
-  hideElement(refs.loadMoreBtn);
+  // hideElement(refs.loadMoreBtn);
   try {
     const { totalHits, hits } = await fetchPhotos(query, currentPage);
     if (hits.length === 0) {
@@ -53,10 +53,12 @@ async function onSearchBtnSubmit(event) {
       'An error occurred while fetching photos. Please try again later.',
       '#EF4040'
     );
+  } finally {
+    event.target.reset();
+    hideElement(refs.loader);
   }
 
   updateLoadMoreBtnStatus();
-  hideElement(refs.loader);
 }
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtnClick);
@@ -76,9 +78,10 @@ async function handleLoadMoreBtnClick() {
       'An error occurred while fetching photos. Please try again later.',
       '#EF4040'
     );
+  } finally {
+    hideElement(refs.loader);
   }
   updateLoadMoreBtnStatus();
-  hideElement(refs.loader);
 }
 
 function displayMessage(message, color) {
