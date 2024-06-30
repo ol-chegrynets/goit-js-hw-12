@@ -97,7 +97,7 @@ function displayMessage(message, color) {
   });
 }
 function updateLoadMoreBtnStatus() {
-  if (currentPage === maxPage) {
+  if (currentPage >= maxPage) {
     hideElement(refs.loadMoreBtn);
     displayMessage(
       "We're sorry, but you've reached the end of search results.",
