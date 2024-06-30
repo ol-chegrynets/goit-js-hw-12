@@ -21,6 +21,7 @@ let query = '';
 let currentPage = 1;
 let maxPage = 1;
 const perPage = 15;
+
 refs.searchForm.addEventListener('submit', onSearchBtnSubmit);
 
 async function onSearchBtnSubmit(event) {

@@ -101,7 +101,7 @@ section {
 
 .photo-data-name {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.33333;
   letter-spacing: 0.04em;
   color: #2e2f42;
@@ -123,26 +123,26 @@ section {
   display: block;
   margin: 15px auto;
   position: relative;
-  background: #d3b508;
-  box-shadow: -24px 0 #ce0505, 24px 0 #bb0488;
+  background: #12ea41;
+  box-shadow: -24px 0 #0f5003, 24px 0 #7bf8a1;
   box-sizing: border-box;
   animation: shadowPulse 2s linear infinite;
 }
 
 @keyframes shadowPulse {
   33% {
-    background: #FFF;
+    background: #5187f2;
     box-shadow: -24px 0 #1194df, 24px 0 #FFF;
   }
 
   66% {
-    background: #15e16d;
-    box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+    background: #06a6a6;
+    box-shadow: -24px 0 #05866a, 24px 0 #7ccfeb;
   }
 
   100% {
-    background: #FFF;
-    box-shadow: -24px 0 #FFF, 24px 0 #15e16d;
+    background: #0ece14;
+    box-shadow: -24px 0 #076423, 24px 0 #15e16d;
   }
 }
 
