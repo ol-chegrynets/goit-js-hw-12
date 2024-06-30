@@ -55,8 +55,8 @@ async function onSearchBtnSubmit(event) {
   } finally {
     refs.searchForm.reset();
     hideElement(refs.loader);
+    updateLoadMoreBtnStatus();
   }
-  updateLoadMoreBtnStatus();
 }
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtnClick);
@@ -78,8 +78,8 @@ async function handleLoadMoreBtnClick() {
     );
   } finally {
     hideElement(refs.loader);
+    updateLoadMoreBtnStatus();
   }
-  updateLoadMoreBtnStatus();
 }
 
 function displayMessage(message, color) {
