@@ -70,7 +70,6 @@ async function handleLoadMoreBtnClick() {
     refs.gallery.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
     pageScroll();
-    updateLoadMoreBtnStatus();
   } catch (error) {
     console.log(error);
     displayMessage(
@@ -78,7 +77,7 @@ async function handleLoadMoreBtnClick() {
       '#EF4040'
     );
   }
-
+  updateLoadMoreBtnStatus();
   hideElement(refs.loader);
 }
 
