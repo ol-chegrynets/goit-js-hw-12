@@ -101,9 +101,10 @@ function updateLoadMoreBtnStatus() {
       '#ffa000'
     );
     refs.searchForm.reset();
-  } else if (currentPage > 1) {
-    showElement(refs.loadMoreBtn);
   }
+  // if (totalHits > 15) {
+  else showElement(refs.loadMoreBtn);
+  // }
 }
 
 function hideElement(element) {
