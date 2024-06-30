@@ -58,8 +58,6 @@ async function onSearchBtnSubmit(event) {
     refs.searchForm.reset();
     hideElement(refs.loader);
   }
-
-  updateLoadMoreBtnStatus();
 }
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtnClick);
