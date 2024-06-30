@@ -34,6 +34,7 @@ async function onSearchBtnSubmit(event) {
     return;
   }
   showElement(refs.loader);
+  hideElement(refs.loadMoreBtn);
   try {
     const { total, hits } = await fetchPhotos(query, currentPage);
     console.log(total);
