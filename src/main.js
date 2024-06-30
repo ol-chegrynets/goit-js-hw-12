@@ -69,6 +69,7 @@ async function handleLoadMoreBtnClick() {
     const markup = galleryTemplate(hits);
     refs.gallery.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
+    pageScroll();
   } catch (error) {
     console.log(error);
     displayMessage(
@@ -95,7 +96,10 @@ function displayMessage(message, color) {
 function updateLoadMoreBtnStatus() {
   if (currentPage >= maxPage) {
     hideElement(refs.loadMoreBtn);
-    displayMessage('No more avaliable pictures', '#ffa000');
+    displayMessage(
+      "We're sorry, but you've reached the end of search results.",
+      '#ffa000'
+    );
     refs.searchForm.reset();
   } else showElement(refs.loadMoreBtn);
 }
@@ -106,4 +110,13 @@ function hideElement(element) {
 
 function showElement(element) {
   element.classList.remove('visually-hidden');
+}
+
+function pageScroll() {
+  const firstGallery = gallery.children[0];
+  const heightCart = firstGallery.getBoundingClientRect().height;
+  window.scrollBy({
+    top: heightCart * 2,
+    behavior: 'smooth',
+  });
 }

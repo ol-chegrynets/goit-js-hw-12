@@ -5,7 +5,7 @@ export async function fetchPhotos(query, currentPage) {
   const params = {
     key: '44531752-ad7ff84ad7be874d52dfce5ce',
     q: query,
-    per_page: 20,
+    per_page: 15,
     page: currentPage,
     image_type: 'photo',
     orientation: 'horizontal',
