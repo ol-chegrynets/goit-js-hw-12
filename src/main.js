@@ -33,8 +33,6 @@ async function onSearchBtnSubmit(event) {
     return;
   }
   showElement(refs.loader);
-  hideElement(refs.loadMoreBtn);
-
   try {
     const { totalHits, hits } = await fetchPhotos(query, currentPage);
     if (hits.length === 0) {
@@ -58,6 +56,7 @@ async function onSearchBtnSubmit(event) {
     refs.searchForm.reset();
     hideElement(refs.loader);
   }
+  updateLoadMoreBtnStatus();
 }
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtnClick);
@@ -102,7 +101,9 @@ function updateLoadMoreBtnStatus() {
       '#ffa000'
     );
     refs.searchForm.reset();
-  } else showElement(refs.loadMoreBtn);
+  } else if (currentPage > 1) {
+    showElement(refs.loadMoreBtn);
+  }
 }
 
 function hideElement(element) {
