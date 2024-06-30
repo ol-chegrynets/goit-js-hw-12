@@ -112,7 +112,7 @@ function showElement(element) {
 }
 
 function pageScroll() {
-  const firstGallery = gallery.children[0];
+  const firstGallery = refs.gallery.children[0];
   const heightCart = firstGallery.getBoundingClientRect().height;
   window.scrollBy({
     top: heightCart * 2,
