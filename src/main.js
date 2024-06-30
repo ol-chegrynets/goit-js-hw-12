@@ -34,7 +34,12 @@ async function onSearchBtnSubmit(event) {
   }
   showElement(refs.loader);
   try {
-    const { totalHits, hits } = await fetchPhotos(query, currentPage);
+    const { total, hits } = await fetchPhotos(query, currentPage);
+    console.log(total);
+    if (total) {
+      displayMessage(`We find ${total} photos.`, '#1194df');
+    }
+
     if (hits.length === 0) {
       refs.gallery.innerHTML = '';
       displayMessage(
@@ -42,7 +47,7 @@ async function onSearchBtnSubmit(event) {
         '#EF4040'
       );
     }
-    maxPage = Math.ceil(totalHits / perPage);
+    maxPage = Math.ceil(total / perPage);
     const markup = galleryTemplate(hits);
     refs.gallery.innerHTML = markup;
     lightbox.refresh();
@@ -101,10 +106,7 @@ function updateLoadMoreBtnStatus() {
       '#ffa000'
     );
     refs.searchForm.reset();
-  }
-  // if (totalHits > 15) {
-  else showElement(refs.loadMoreBtn);
-  // }
+  } else showElement(refs.loadMoreBtn);
 }
 
 function hideElement(element) {

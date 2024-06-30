@@ -132,7 +132,7 @@ section {
 @keyframes shadowPulse {
   33% {
     background: #FFF;
-    box-shadow: -24px 0 #15e16d, 24px 0 #FFF;
+    box-shadow: -24px 0 #1194df, 24px 0 #FFF;
   }
 
   66% {
