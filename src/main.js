@@ -33,7 +33,8 @@ async function onSearchBtnSubmit(event) {
     return;
   }
   showElement(refs.loader);
-  // hideElement(refs.loadMoreBtn);
+  hideElement(refs.loadMoreBtn);
+
   try {
     const { totalHits, hits } = await fetchPhotos(query, currentPage);
     if (hits.length === 0) {
@@ -54,7 +55,7 @@ async function onSearchBtnSubmit(event) {
       '#EF4040'
     );
   } finally {
-    event.target.reset();
+    refs.searchForm.reset();
     hideElement(refs.loader);
   }
 
